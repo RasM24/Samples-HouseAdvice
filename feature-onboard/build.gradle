@@ -8,4 +8,11 @@ dependencies {
 
 	//stepper library
 	implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:4.1.2'
+
+	implementation "org.koin:koin-core:$koin_version"
+	implementation "org.koin:koin-core-ext:$koin_version"
+	implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+
+	implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+	implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_viewmodel_version"
 }

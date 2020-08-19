@@ -3,6 +3,7 @@ package ru.endroad.houseadvice.application
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.omni.onboardingscreen.feature.onboarding.OnBoardingFragment
 import kotlinx.android.synthetic.main.activity_single.toolbar
 import org.koin.android.ext.android.inject
 import ru.endroad.houseadvice.R
@@ -26,6 +27,7 @@ class SingleActivity : AppCompatActivity() {
 	}
 
 	private fun openHomeScreen() {
+		navigatorHolder.open(OnBoardingFragment())
 	}
 
 	private fun processIntent(intent: Intent) {
