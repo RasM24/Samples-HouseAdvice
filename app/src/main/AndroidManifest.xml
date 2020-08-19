@@ -10,7 +10,7 @@
 		android:theme="@style/MainTheme">
 
 		<activity
-			android:name=".SingleActivity"
+			android:name=".application.SingleActivity"
 			android:label="@string/app_name"
 			android:theme="@style/MainTheme.NoActionBar">
 			<intent-filter>
