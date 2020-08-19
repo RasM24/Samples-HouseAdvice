@@ -4,5 +4,5 @@ import org.koin.dsl.module
 import ru.endroad.houseadvice.R
 
 val moduleNavigation = module {
-	single { NavigatorHolder(R.id.content) }
+	single<NavigatorHolder> { ContentNavigator(R.id.content) }
 }

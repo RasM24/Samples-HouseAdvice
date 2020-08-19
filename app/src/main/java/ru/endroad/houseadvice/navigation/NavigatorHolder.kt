@@ -1,9 +1,14 @@
 package ru.endroad.houseadvice.navigation
 
-import androidx.annotation.IdRes
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 
-class NavigatorHolder(@IdRes val container: Int) {
+interface NavigatorHolder {
+	val container: Int
+	var fragmentManager: FragmentManager?
 
-	var fragmentManager: FragmentManager? = null
+	fun open(fragment: Fragment) = fragmentManager?.forwardTo(fragment, container)
+	fun replace(fragment: Fragment) = fragmentManager?.replace(fragment, container)
+	fun changeRoot(fragment: Fragment) = fragmentManager?.changeRoot(fragment, container)
+	fun back() = fragmentManager?.back()
 }
