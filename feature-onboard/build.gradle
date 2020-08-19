@@ -1,11 +1,11 @@
 dependencies {
-	implementation project(":feature-onboard")
-
 	implementation "androidx.appcompat:appcompat:$appcompat_version"
 	implementation "com.google.android.material:material:$material_version"
 	implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
 
-	implementation "org.koin:koin-core:$koin_version"
-	implementation "org.koin:koin-core-ext:$koin_version"
-	implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+	//viewPager2 library
+	implementation 'androidx.viewpager2:viewpager2:1.0.0'
+
+	//stepper library
+	implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:4.1.2'
 }

@@ -1,2 +1,3 @@
 rootProject.name = 'hakaton-HouseAdvice'
 include ':app'
+include ':feature-onboard'

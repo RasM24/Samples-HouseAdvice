@@ -21,17 +21,21 @@ class SingleActivity : AppCompatActivity() {
 		setContentView(R.layout.activity_single)
 		setSupportActionBar(toolbar)
 
+		savedInstanceState ?: openHomeScreen()
 		intent.let(::processIntent)
+	}
+
+	private fun openHomeScreen() {
+	}
+
+	private fun processIntent(intent: Intent) {
+		if (intent.action == Intent.ACTION_VIEW) {
+			intent.data?.let(deeplinkHandler::handle)
+		}
 	}
 
 	override fun onDestroy() {
 		navigatorHolder.fragmentManager = null
 		super.onDestroy()
-	}
-
-	private fun processIntent(intent: Intent) {
-		if (intent.action == Intent.ACTION_VIEW){
-			intent.data?.let(deeplinkHandler::handle)
-		}
 	}
 }
