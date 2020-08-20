@@ -3,9 +3,9 @@ package ru.endroad.houseadvice.application
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.omni.onboardingscreen.feature.onboarding.OnBoardingFragment
 import kotlinx.android.synthetic.main.activity_single.toolbar
 import org.koin.android.ext.android.inject
+import ru.endroad.feature.voting.view.VotingFragment
 import ru.endroad.houseadvice.R
 import ru.endroad.houseadvice.deeplink.DeeplinkHandler
 import ru.endroad.houseadvice.navigation.NavigatorHolder
@@ -27,7 +27,7 @@ class SingleActivity : AppCompatActivity() {
 	}
 
 	private fun openHomeScreen() {
-		navigatorHolder.open(OnBoardingFragment())
+		navigatorHolder.open(VotingFragment())
 	}
 
 	private fun processIntent(intent: Intent) {

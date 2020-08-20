@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?><!--TODO не вынесены ресурсы цветов и текстов-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<TextView
+		android:id="@+id/voting_title"
+		style="@style/TextAppearance.MaterialComponents.Headline4"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:padding="16dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:text="Голосуем за снос соседнего здания" />
+
+	<TextView
+		android:id="@+id/voting_information"
+		style="@style/TextAppearance.MaterialComponents.Body1"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:padding="16dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/voting_title"
+		tools:text="Жители соседних домов осаждают нашу крепость, милорд!" />
+
+	<Button
+		android:id="@+id/voting_yes"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="24dp"
+		android:text="За"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/voting_information" />
+
+	<Button
+		android:id="@+id/voting_no"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Против"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/voting_yes" />
+
+	<Button
+		android:id="@+id/voting_abstained"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Воздержусь"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/voting_no" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
