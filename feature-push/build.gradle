@@ -1,0 +1,5 @@
+apply plugin: 'com.google.gms.google-services'
+dependencies {
+
+	api 'com.google.firebase:firebase-messaging:20.1.4'
+}

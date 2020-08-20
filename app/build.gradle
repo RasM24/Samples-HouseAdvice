@@ -1,5 +1,6 @@
 dependencies {
 	implementation project(":feature-onboard")
+	implementation project(":feature-push")
 
 	implementation "androidx.appcompat:appcompat:$appcompat_version"
 	implementation "com.google.android.material:material:$material_version"
