@@ -1,0 +1,4 @@
+<resources>
+	<string name="auth_phone_hint">номер</string>
+	<string name="auth_code_hint">код</string>
+</resources>

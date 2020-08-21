@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical">
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:id="@+id/input_layout_phone"
+		style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="16dp"
+		android:layout_marginTop="32dp"
+		android:hint="@string/auth_phone_hint"
+		app:helperText="На этот номер придет код"
+		app:helperTextEnabled="true"
+		app:layout_constraintBottom_toTopOf="@id/input_layout_code"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintVertical_bias="0.75"
+		app:layout_constraintWidth_percent="0.7">
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/input_phone"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:digits="1234567890+-() "
+			android:inputType="phone" />
+
+	</com.google.android.material.textfield.TextInputLayout>
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:id="@+id/input_layout_code"
+		style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+		tools:helperText="Отправить повторно код через 120 сек."
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="8dp"
+		android:hint="@string/auth_code_hint"
+		app:counterEnabled="true"
+		app:counterMaxLength="6"
+		app:helperTextEnabled="true"
+		app:layout_constraintBottom_toTopOf="@id/resend"
+		app:layout_constraintEnd_toEndOf="@id/sign_phone"
+		app:layout_constraintStart_toStartOf="@id/sign_phone">
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/input_code"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:inputType="number"
+			android:maxLength="6"
+			android:singleLine="true" />
+
+	</com.google.android.material.textfield.TextInputLayout>
+
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/sign_phone"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="32dp"
+		android:text="Button"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintWidth_percent="0.7" />
+
+	<TextView
+		android:id="@+id/text_agreement"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="16dp"
+		android:layout_marginEnd="16dp"
+		android:layout_marginStart="16dp"
+		android:text="Нажимая получить СМС-код, подтверждаю свое согласие с условиями Лицензионного Соглашения"
+		app:layout_constraintBottom_toTopOf="@id/sign_phone"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent" />
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/resend"
+		style="@style/Widget.MaterialComponents.Button.TextButton"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="8dp"
+		android:text="Отправить снова"
+		app:layout_constraintBottom_toTopOf="@id/text_agreement"
+		app:layout_constraintEnd_toEndOf="@+id/sign_phone"
+		app:layout_constraintStart_toStartOf="@+id/sign_phone" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
