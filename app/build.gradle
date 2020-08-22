@@ -6,6 +6,7 @@ dependencies {
 	implementation project(":feature-login")
 	implementation project(":feature-navigation")
 	implementation project(':feature-bulletinboard')
+	implementation project(':feature-forum')
 
 	implementation "androidx.appcompat:appcompat:$appcompat_version"
 	implementation "com.google.android.material:material:$material_version"
