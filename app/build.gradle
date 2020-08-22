@@ -10,6 +10,8 @@ dependencies {
 	implementation project(':feature-support')
 	implementation project(':feature-question-list')
 
+	implementation project(':shared-voting')
+
 	implementation "androidx.appcompat:appcompat:$appcompat_version"
 	implementation "com.google.android.material:material:$material_version"
 	implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"

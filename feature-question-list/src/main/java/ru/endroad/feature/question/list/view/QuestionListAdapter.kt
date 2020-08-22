@@ -6,7 +6,11 @@ import ru.endroad.shared.voting.model.Question
 import ru.endroad.shared.voting.model.QuestionList
 import ru.endroad.shared.voting.model.QuestionStatus
 
-class QuestionListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class QuestionListAdapter(
+	private val onCLickSoonQuestionListener: (Long) -> Unit,
+	private val onCLickOpenQuestionListener: (Long) -> Unit,
+	private val onCLickCompletedQuestionListener: (Long) -> Unit
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 	private var items: MutableList<Question> = mutableListOf()
 
@@ -18,9 +22,9 @@ class QuestionListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
 		when (viewType) {
-			SoonQuestionViewHolder.type      -> SoonQuestionViewHolder(parent)
-			OpenQuestionViewHolder.type      -> OpenQuestionViewHolder(parent)
-			CompletedQuestionViewHolder.type -> CompletedQuestionViewHolder(parent)
+			SoonQuestionViewHolder.type      -> SoonQuestionViewHolder(onCLickSoonQuestionListener, parent)
+			OpenQuestionViewHolder.type      -> OpenQuestionViewHolder(onCLickOpenQuestionListener, parent)
+			CompletedQuestionViewHolder.type -> CompletedQuestionViewHolder(onCLickCompletedQuestionListener, parent)
 			else                             -> throw IllegalStateException("нет такого viewHolder")
 		}
 
