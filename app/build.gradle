@@ -8,6 +8,7 @@ dependencies {
 	implementation project(':feature-bulletinboard')
 	implementation project(':feature-forum')
 	implementation project(':feature-support')
+	implementation project(':feature-question-list')
 
 	implementation "androidx.appcompat:appcompat:$appcompat_version"
 	implementation "com.google.android.material:material:$material_version"
