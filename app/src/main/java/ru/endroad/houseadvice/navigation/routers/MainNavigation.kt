@@ -1,21 +1,23 @@
-package ru.endroad.houseadvice.navigation.navigator
+package ru.endroad.houseadvice.navigation.routers
 
+import ru.endroad.feature.navigation.HubFragment
 import ru.endroad.feature.onboard.data.OnBoardingAvailableDataSource
 import ru.endroad.feature.onboard.view.OnBoardingFragment
 import ru.endroad.feature.question.list.view.QuestionListFragment
-import ru.endroad.feature.voting.view.VotingFragment
 import ru.endroad.houseadvice.navigation.navigator.NavigatorHolder
 
 class MainNavigation(
-	private val navigatorHolder: NavigatorHolder,
+	private val rootNavigatorHolder: NavigatorHolder,
+	private val contentNavigatorHolder: NavigatorHolder,
 	private val onBoardingAvailableDataSource: OnBoardingAvailableDataSource
 ) {
 
 	fun openInitialScreen() {
 		if (onBoardingAvailableDataSource.isOnBoardAvailable()) {
-			navigatorHolder.changeRoot(OnBoardingFragment())
+			rootNavigatorHolder.changeRoot(OnBoardingFragment())
 		} else {
-			navigatorHolder.changeRoot(QuestionListFragment())
+			rootNavigatorHolder.changeRoot(HubFragment())
+			contentNavigatorHolder.changeRoot(QuestionListFragment())
 		}
 	}
 }

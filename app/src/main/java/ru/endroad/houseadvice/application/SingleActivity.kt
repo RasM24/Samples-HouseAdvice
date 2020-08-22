@@ -2,37 +2,54 @@ package ru.endroad.houseadvice.application
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_single.toolbar
 import org.koin.android.ext.android.inject
-import ru.endroad.feature.navigation.HubFragment
 import ru.endroad.houseadvice.R
 import ru.endroad.houseadvice.deeplink.DeeplinkHandler
-import ru.endroad.houseadvice.navigation.navigator.MainNavigation
+import ru.endroad.houseadvice.navigation.di.contentNavigatorQualifier
+import ru.endroad.houseadvice.navigation.di.rootNavigatorQualifier
 import ru.endroad.houseadvice.navigation.navigator.NavigatorHolder
-import ru.endroad.houseadvice.navigation.utils.changeRoot
-import ru.endroad.houseadvice.navigation.utils.replaceAnimation
+import ru.endroad.houseadvice.navigation.routers.MainNavigation
 
 class SingleActivity : AppCompatActivity() {
 
-	private val navigatorHolder by inject<NavigatorHolder>()
+	//TODO для более правильной реалазации необходимо разделить NavigatorHolder(отвечает только за хранение fragmentManager)
+	// и RootNavigator/ContentNavigator(осуществляет переход экранов на заданном уровне навигации. Принимает в конструкторе NavigatorHolder
+	private val rootNavigatorHolder by inject<NavigatorHolder>(rootNavigatorQualifier)
+	private val contentNavigatorHolder by inject<NavigatorHolder>(contentNavigatorQualifier)
+
 	private val deeplinkHandler by inject<DeeplinkHandler>()
 
 	private val mainNavigation by inject<MainNavigation>()
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
-
-		navigatorHolder.fragmentManager = supportFragmentManager
 		setContentView(R.layout.activity_single)
-		setSupportActionBar(toolbar)
+		setupToolbar()
+
+		rootNavigatorHolder.fragmentManager = supportFragmentManager
+		contentNavigatorHolder.fragmentManager = supportFragmentManager
 
 		savedInstanceState ?: openHomeScreen()
 		intent.let(::processIntent)
 	}
 
+	private fun setupToolbar() {
+		setSupportActionBar(toolbar)
+		toolbar.setNavigationOnClickListener { onBackPressed() }
+		supportFragmentManager.addOnBackStackChangedListener {
+			supportActionBar?.setHomeEnabled()
+		}
+		supportActionBar?.setHomeEnabled()
+	}
+
+	private fun ActionBar.setHomeEnabled() {
+		this.setDisplayHomeAsUpEnabled(supportFragmentManager.backStackEntryCount != 0)
+	}
+
 	private fun openHomeScreen() {
-		supportFragmentManager.changeRoot(HubFragment(), replaceAnimation, R.id.root)
 		mainNavigation.openInitialScreen()
 	}
 
@@ -43,7 +60,8 @@ class SingleActivity : AppCompatActivity() {
 	}
 
 	override fun onDestroy() {
-		navigatorHolder.fragmentManager = null
+		rootNavigatorHolder.fragmentManager = null
+		contentNavigatorHolder.fragmentManager = null
 		super.onDestroy()
 	}
 }
