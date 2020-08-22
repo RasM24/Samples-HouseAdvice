@@ -1,6 +1,5 @@
 dependencies {
 	implementation project(":feature-onboard")
-	implementation project(":feature-push")
 	implementation project(':feature-question-voting')
 	implementation project(":feature-authentication")
 	implementation project(":feature-login")
