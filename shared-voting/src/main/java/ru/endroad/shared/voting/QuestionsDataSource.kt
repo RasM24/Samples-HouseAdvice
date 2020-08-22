@@ -6,7 +6,7 @@ import ru.endroad.shared.voting.model.QuestionStatus
 //TODO идеальным и единственным правильным решением было бы использовать interface, но мне лень тратить сейчас на это время =)
 class QuestionsDataSource {
 
-	val hardcodeData = listOf<Question>(
+	private val hardcodeData = listOf(
 		Question(
 			0,
 			"Выбор цветов",
@@ -33,7 +33,8 @@ class QuestionsDataSource {
 		)
 	)
 
-	fun get(): List<Question> {
+	//TODO suspend нужен для понимания, что этот запрос может быть слишком долгим
+	suspend fun get(): List<Question> {
 		return hardcodeData
 	}
 }

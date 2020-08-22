@@ -2,6 +2,7 @@ package ru.endroad.houseadvice.navigation.routers
 
 import ru.endroad.feature.forum.view.ForumFragment
 import ru.endroad.feature.navigation.HubNavigationRouter
+import ru.endroad.feature.profile.ProfileFragment
 import ru.endroad.feature.question.list.view.QuestionListFragment
 import ru.endroad.feature.support.SupportFragment
 import ru.endroad.feature_information.BulletinBoardFragment
@@ -9,7 +10,9 @@ import ru.endroad.houseadvice.navigation.navigator.NavigatorHolder
 
 class HubNavigationRouterImpl(private val navigatorHolder: NavigatorHolder) : HubNavigationRouter {
 
-	override fun openProfile() = Unit
+	override fun openProfile() {
+		navigatorHolder.changeRoot(ProfileFragment())
+	}
 
 	override fun openVotes() {
 		navigatorHolder.changeRoot(QuestionListFragment())

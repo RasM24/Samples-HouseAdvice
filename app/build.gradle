@@ -12,6 +12,7 @@ dependencies {
 	implementation project(':feature-profile')
 
 	implementation project(':shared-voting')
+	implementation project(":shared-profile")
 
 	implementation "androidx.appcompat:appcompat:$appcompat_version"
 	implementation "com.google.android.material:material:$material_version"
