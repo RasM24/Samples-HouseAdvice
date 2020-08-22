@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.voting_layout.voting_abstained
@@ -13,11 +14,24 @@ import kotlinx.android.synthetic.main.voting_layout.voting_no
 import kotlinx.android.synthetic.main.voting_layout.voting_title
 import kotlinx.android.synthetic.main.voting_layout.voting_yes
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.parameter.parametersOf
 import ru.endroad.feature.voting.R
+import ru.endroad.shared.voting.model.QuestionStatus
+import ru.endroad.shared.voting.model.Vote
 
 class VotingFragment : Fragment() {
 
-	private val presenter: VotingPresenter by viewModel()
+	companion object {
+		private const val QUESTION_ID = "QUESTION_ID"
+
+		fun VotingFragment.setArgument(questionId: Long) {
+			arguments = bundleOf(QUESTION_ID to questionId)
+		}
+	}
+
+	private val questionId: Long by lazy { checkNotNull(arguments?.getLong(QUESTION_ID)) }
+
+	private val presenter: VotingPresenter by viewModel { parametersOf(questionId) }
 
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
 		inflater.inflate(R.layout.voting_layout, container, false)
@@ -39,30 +53,36 @@ class VotingFragment : Fragment() {
 	}
 
 	private fun renderData(state: VotingScreenState.Data) {
-		voting_title.text = state.title
-		voting_information.text = state.information
+		voting_title.text = state.data.title
+		voting_information.text = state.data.information
 
-		//TODO кривая реализация. При смене голоса будет аффектится
-		when (state.vote) {
-			VOTE.YES       -> {
-				voting_yes.setBackgroundColor(Color.GREEN)
-				voting_no.isEnabled = false
-				voting_abstained.isEnabled = false
-			}
+		if (state.data.status == QuestionStatus.SOON) {
+			voting_abstained.isEnabled = false
+			voting_no.isEnabled = false
+			voting_yes.isEnabled = false
+		} else {
+			//TODO кривая реализация. При смене голоса будет аффектится
+			when (state.vote) {
+				Vote.YES       -> {
+					voting_yes.setBackgroundColor(Color.GREEN)
+					voting_no.isEnabled = false
+					voting_abstained.isEnabled = false
+				}
 
-			VOTE.NO        -> {
-				voting_no.setBackgroundColor(Color.GREEN)
-				voting_yes.isEnabled = false
-				voting_abstained.isEnabled = false
-			}
+				Vote.NO        -> {
+					voting_no.setBackgroundColor(Color.GREEN)
+					voting_yes.isEnabled = false
+					voting_abstained.isEnabled = false
+				}
 
-			VOTE.ABSTAINED -> {
-				voting_abstained.setBackgroundColor(Color.GREEN)
-				voting_no.isEnabled = false
-				voting_yes.isEnabled = false
-			}
+				Vote.ABSTAINED -> {
+					voting_abstained.setBackgroundColor(Color.GREEN)
+					voting_no.isEnabled = false
+					voting_yes.isEnabled = false
+				}
 
-			VOTE.NO_VOTE   -> {
+				Vote.NO_VOTE   -> {
+				}
 			}
 		}
 	}

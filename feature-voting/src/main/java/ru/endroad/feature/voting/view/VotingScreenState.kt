@@ -1,13 +1,8 @@
 package ru.endroad.feature.voting.view
 
-sealed class VotingScreenState {
-	class Data(val title: String, val information: String, val vote: VOTE) : VotingScreenState()
-}
+import ru.endroad.shared.voting.model.Question
+import ru.endroad.shared.voting.model.Vote
 
-//TODO плохое наименование
-enum class VOTE {
-	YES,
-	NO,
-	ABSTAINED,
-	NO_VOTE
+sealed class VotingScreenState {
+	class Data(val data: Question, val vote: Vote) : VotingScreenState()
 }

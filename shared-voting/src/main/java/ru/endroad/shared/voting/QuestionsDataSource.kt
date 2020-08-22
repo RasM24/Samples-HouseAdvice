@@ -32,7 +32,7 @@ class QuestionsDataSource {
 			1598097778
 		),
 		Question(
-			0,
+			3,
 			"Выбор цветов",
 			"Фиалки, розы, гвоздики. А какие любимые цветы у тебя? Что предпочтешь видеть у себя под окнами?",
 			QuestionStatus.OPEN,
@@ -40,7 +40,7 @@ class QuestionsDataSource {
 			1599097778
 		),
 		Question(
-			1,
+			4,
 			"Смена ТСЖ",
 			"",
 			QuestionStatus.SOON,
@@ -48,7 +48,7 @@ class QuestionsDataSource {
 			1599997778
 		),
 		Question(
-			2,
+			5,
 			"Запрет стоительства парковки",
 			"",
 			QuestionStatus.COMPLETED,
@@ -56,7 +56,7 @@ class QuestionsDataSource {
 			1598097778
 		),
 		Question(
-			0,
+			6,
 			"Выбор цветов",
 			"Фиалки, розы, гвоздики. А какие любимые цветы у тебя? Что предпочтешь видеть у себя под окнами?",
 			QuestionStatus.OPEN,
@@ -64,7 +64,7 @@ class QuestionsDataSource {
 			1599097778
 		),
 		Question(
-			1,
+			7,
 			"Смена ТСЖ",
 			"",
 			QuestionStatus.SOON,
@@ -72,7 +72,7 @@ class QuestionsDataSource {
 			1599997778
 		),
 		Question(
-			2,
+			8,
 			"Запрет стоительства парковки",
 			"",
 			QuestionStatus.COMPLETED,
@@ -80,7 +80,7 @@ class QuestionsDataSource {
 			1598097778
 		),
 		Question(
-			0,
+			9,
 			"Выбор цветов",
 			"Фиалки, розы, гвоздики. А какие любимые цветы у тебя? Что предпочтешь видеть у себя под окнами?",
 			QuestionStatus.OPEN,
@@ -88,7 +88,7 @@ class QuestionsDataSource {
 			1599097778
 		),
 		Question(
-			1,
+			10,
 			"Смена ТСЖ",
 			"",
 			QuestionStatus.SOON,
@@ -96,7 +96,7 @@ class QuestionsDataSource {
 			1599997778
 		),
 		Question(
-			2,
+			11,
 			"Запрет стоительства парковки",
 			"",
 			QuestionStatus.COMPLETED,
@@ -108,5 +108,11 @@ class QuestionsDataSource {
 	//TODO suspend нужен для понимания, что этот запрос может быть слишком долгим
 	suspend fun get(): List<Question> {
 		return hardcodeData.sortedBy { it.status }
+	}
+
+	//TODO стоило бы разделить dataSource, но для ускорения разработки решено оставить так
+	suspend fun get(id: Long): Question {
+		val question = hardcodeData.find { it.id == id }
+		return checkNotNull(question)
 	}
 }

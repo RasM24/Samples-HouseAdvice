@@ -4,29 +4,40 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import ru.endroad.feature.voting.model.VotingDataSource
+import ru.endroad.shared.voting.QuestionsDataSource
+import ru.endroad.shared.voting.VotingDataSource
+import ru.endroad.shared.voting.model.Vote
 
-class VotingPresenter(private val votingDataSource: VotingDataSource) : ViewModel() {
+class VotingPresenter(
+	private val votingDataSource: VotingDataSource,
+	private val questionsDataSource: QuestionsDataSource,
+	private val questionId: Long
+) : ViewModel() {
 
 	val screenState = MutableLiveData<VotingScreenState>()
 
 	init {
 		viewModelScope.launch {
-			val data = votingDataSource.get()
-			screenState.value = VotingScreenState.Data(data.title, data.information, data.vote)
+			val data = questionsDataSource.get(questionId)
+			val vote = votingDataSource.get(questionId)
+
+			screenState.value = VotingScreenState.Data(data, vote)
 		}
 	}
 
-	fun onYesClick() = vote(VOTE.YES)
-	fun onNoClick() = vote(VOTE.NO)
-	fun onAbstainedClick() = vote(VOTE.ABSTAINED)
+	fun onYesClick() = vote(Vote.YES)
+	fun onNoClick() = vote(Vote.NO)
+	fun onAbstainedClick() = vote(Vote.ABSTAINED)
 
-	private fun vote(vote: VOTE) {
+	//TODO придумать как вернуть голос
+	private fun vote(vote: Vote) {
 		viewModelScope.launch {
-			votingDataSource.vote(vote)
+			votingDataSource.vote(questionId, vote)
 
-			val data = votingDataSource.get()
-			screenState.value = VotingScreenState.Data(data.title, data.information, data.vote)
+			val data = questionsDataSource.get(questionId)
+			val acceptedVote = votingDataSource.get(questionId)
+
+			screenState.value = VotingScreenState.Data(data, acceptedVote)
 		}
 	}
 }
