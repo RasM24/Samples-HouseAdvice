@@ -5,11 +5,12 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_single.toolbar
 import org.koin.android.ext.android.inject
-import ru.endroad.feature.onboard.view.OnBoardingFragment
+import ru.endroad.feature.navigation.HubFragment
 import ru.endroad.houseadvice.R
 import ru.endroad.houseadvice.deeplink.DeeplinkHandler
 import ru.endroad.houseadvice.navigation.MainNavigation
 import ru.endroad.houseadvice.navigation.NavigatorHolder
+import ru.endroad.houseadvice.navigation.changeRoot
 
 class SingleActivity : AppCompatActivity() {
 
@@ -30,6 +31,7 @@ class SingleActivity : AppCompatActivity() {
 	}
 
 	private fun openHomeScreen() {
+		supportFragmentManager.changeRoot(HubFragment(), R.id.root)
 		mainNavigation.openInitialScreen()
 	}
 

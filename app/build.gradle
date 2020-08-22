@@ -4,6 +4,7 @@ dependencies {
 	implementation project(":feature-voting")
 	implementation project(":feature-authentication")
 	implementation project(":feature-login")
+	implementation project(":feature-navigation")
 
 	implementation "androidx.appcompat:appcompat:$appcompat_version"
 	implementation "com.google.android.material:material:$material_version"

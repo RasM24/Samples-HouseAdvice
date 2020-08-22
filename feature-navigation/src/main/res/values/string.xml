@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="tab_profile">Профиль</string>
+	<string name="tab_votes">Голосования</string>
+	<string name="tab_forum">Форум</string>
+	<string name="tab_information">Информация</string>
+	<string name="tab_support">ТСЖ/ЖКХ</string>
+
+</resources>
