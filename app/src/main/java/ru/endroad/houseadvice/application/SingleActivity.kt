@@ -8,9 +8,9 @@ import org.koin.android.ext.android.inject
 import ru.endroad.feature.navigation.HubFragment
 import ru.endroad.houseadvice.R
 import ru.endroad.houseadvice.deeplink.DeeplinkHandler
-import ru.endroad.houseadvice.navigation.MainNavigation
-import ru.endroad.houseadvice.navigation.NavigatorHolder
-import ru.endroad.houseadvice.navigation.changeRoot
+import ru.endroad.houseadvice.navigation.navigator.MainNavigation
+import ru.endroad.houseadvice.navigation.navigator.NavigatorHolder
+import ru.endroad.houseadvice.navigation.utils.changeRoot
 
 class SingleActivity : AppCompatActivity() {
 

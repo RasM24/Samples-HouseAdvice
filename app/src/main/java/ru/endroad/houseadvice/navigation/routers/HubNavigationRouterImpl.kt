@@ -1,6 +1,7 @@
-package ru.endroad.houseadvice.navigation
+package ru.endroad.houseadvice.navigation.routers
 
 import ru.endroad.feature.navigation.HubNavigationRouter
+import ru.endroad.houseadvice.navigation.navigator.NavigatorHolder
 
 class HubNavigationRouterImpl(private val navigatorHolder: NavigatorHolder) : HubNavigationRouter {
 

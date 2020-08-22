@@ -1,4 +1,4 @@
-package ru.endroad.houseadvice.navigation
+package ru.endroad.houseadvice.navigation.routers
 
 import android.app.NotificationChannel
 import android.app.NotificationManager

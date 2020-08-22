@@ -1,4 +1,4 @@
-package ru.endroad.houseadvice.navigation
+package ru.endroad.houseadvice.navigation.navigator
 
 import androidx.annotation.IdRes
 import androidx.fragment.app.FragmentManager

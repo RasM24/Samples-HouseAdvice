@@ -2,7 +2,7 @@ package ru.endroad.houseadvice.deeplink
 
 import android.net.Uri
 import androidx.fragment.app.Fragment
-import ru.endroad.houseadvice.navigation.NavigatorHolder
+import ru.endroad.houseadvice.navigation.navigator.NavigatorHolder
 
 class DeeplinkHandler(private val navigatorHolder: NavigatorHolder) {
 
