@@ -1,6 +1,7 @@
 package ru.endroad.houseadvice.navigation.routers
 
 import ru.endroad.feature.navigation.HubNavigationRouter
+import ru.endroad.feature_information.BulletinBoardFragment
 import ru.endroad.houseadvice.navigation.navigator.NavigatorHolder
 
 class HubNavigationRouterImpl(private val navigatorHolder: NavigatorHolder) : HubNavigationRouter {
@@ -11,7 +12,9 @@ class HubNavigationRouterImpl(private val navigatorHolder: NavigatorHolder) : Hu
 
 	override fun openForum() = Unit
 
-	override fun openInformation() = Unit
+	override fun openInformation() {
+		navigatorHolder.open(BulletinBoardFragment())
+	}
 
 	override fun openSupport() = Unit
 }
