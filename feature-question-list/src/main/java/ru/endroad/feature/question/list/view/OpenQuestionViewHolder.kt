@@ -5,9 +5,9 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.open_question_item.view.question_days_to_close
 import kotlinx.android.synthetic.main.open_question_item.view.question_information
 import kotlinx.android.synthetic.main.open_question_item.view.question_title
-import ru.endroad.feature.question.list.R
 import ru.endroad.feature.question.list.utils.getLeftCountDaysTo
 import ru.endroad.feature.question.list.utils.inflate
+import ru.endroad.houseadvice.feature.question.list.R
 import ru.endroad.shared.voting.model.Question
 
 class OpenQuestionViewHolder(

@@ -2,7 +2,7 @@ package ru.endroad.feature.onboard.boardview
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
-import ru.endroad.feature.onboard.R
+import ru.endroad.houseadvice.feature.onboard.R
 
 enum class OnBoardingPage(
 	@StringRes val titleResource: Int,
@@ -15,7 +15,7 @@ enum class OnBoardingPage(
 		R.string.onboarding_slide1_title,
 		R.string.onboarding_slide1_subtitle,
 		R.string.onboarding_slide1_desc,
-        R.drawable.ic_hang_out
+		R.drawable.ic_hang_out
 	),
 
 	TWO(

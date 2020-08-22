@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.profile_fragment.profile_flat_number
 import kotlinx.android.synthetic.main.profile_fragment.profile_name
 import kotlinx.android.synthetic.main.profile_fragment.profile_percent_of_vote
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import ru.endroad.houseadvice.feature.profile.R
 import ru.endroad.shared.profile.Profile
 
 class ProfileFragment : Fragment() {

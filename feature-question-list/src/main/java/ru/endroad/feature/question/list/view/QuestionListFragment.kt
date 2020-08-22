@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.question_list_fragment.recyclerView
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import ru.endroad.feature.question.list.R
 import ru.endroad.feature.question.list.presenter.QuestionListViewModel
+import ru.endroad.houseadvice.feature.question.list.R
 
 class QuestionListFragment : Fragment() {
 

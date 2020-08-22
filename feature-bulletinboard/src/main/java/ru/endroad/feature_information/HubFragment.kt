@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.bulletin_board_fragment.first_announcement_title
 import kotlinx.android.synthetic.main.bulletin_board_fragment.second_announcement_title
 import kotlinx.android.synthetic.main.bulletin_board_fragment.third_announcement_title
+import ru.endroad.houseadvice.feature_information.R
 
 class BulletinBoardFragment : Fragment() {
 

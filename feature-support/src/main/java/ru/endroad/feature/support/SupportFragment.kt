@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.support_fragment.stub_text
+import ru.endroad.houseadvice.feature.support.R
 
 class SupportFragment : Fragment() {
-
 
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
 		inflater.inflate(R.layout.support_fragment, container, false)

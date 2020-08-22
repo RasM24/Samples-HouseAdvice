@@ -16,6 +16,7 @@ import kotlinx.android.synthetic.main.question_report_layout.voting_title
 import kotlinx.android.synthetic.main.question_report_layout.you_vote
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
+import ru.endroad.houseadvice.feature.report.R
 import ru.endroad.shared.voting.model.Vote
 import java.text.SimpleDateFormat
 import java.util.Date

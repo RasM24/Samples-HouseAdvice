@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.voting_layout.voting_title
 import kotlinx.android.synthetic.main.voting_layout.voting_yes
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
-import ru.endroad.feature.voting.R
+import ru.endroad.houseadvice.feature.voting.R
 import ru.endroad.shared.voting.model.QuestionStatus
 import ru.endroad.shared.voting.model.Vote
 
