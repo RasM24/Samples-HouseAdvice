@@ -52,7 +52,7 @@ class QuestionsDataSource {
 			"Запрет стоительства парковки",
 			"",
 			QuestionStatus.COMPLETED,
-			1597097778,
+			1593097778,
 			1598097778
 		),
 		Question(
@@ -76,7 +76,7 @@ class QuestionsDataSource {
 			"Запрет стоительства парковки",
 			"",
 			QuestionStatus.COMPLETED,
-			1597097778,
+			1587097778,
 			1598097778
 		),
 		Question(
@@ -100,7 +100,7 @@ class QuestionsDataSource {
 			"Запрет стоительства парковки",
 			"",
 			QuestionStatus.COMPLETED,
-			1597097778,
+			1596097778,
 			1598097778
 		)
 	)

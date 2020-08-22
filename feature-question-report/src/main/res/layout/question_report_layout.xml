@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?><!--TODO не вынесены ресурсы цветов и текстов-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/voting_screen"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<TextView
+		android:id="@+id/voting_title"
+		style="@style/TextAppearance.MaterialComponents.Headline5"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:padding="16dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:text="Голосуем за снос соседнего здания" />
+
+	<TextView
+		android:id="@+id/voting_information"
+		style="@style/TextAppearance.MaterialComponents.Body1"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:padding="16dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/voting_title"
+		tools:text="Жители соседних домов осаждают нашу крепость, милорд!" />
+
+	<TextView
+		android:id="@+id/date"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="24dp"
+		tools:text="Собрание проходило с 21 апреля по 21 мая"
+		app:layout_constraintStart_toStartOf="@+id/answer"
+		app:layout_constraintTop_toBottomOf="@+id/answer" />
+
+	<TextView
+		android:id="@+id/you_vote"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="8dp"
+		app:layout_constraintStart_toEndOf="@+id/answer"
+		app:layout_constraintBaseline_toBaselineOf="@id/answer"
+		tools:text="Ваш голос: ЗА" />
+
+	<TextView
+		android:id="@+id/answer"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		style="@style/TextAppearance.MaterialComponents.Body1"
+		android:layout_marginStart="16dp"
+		tools:text="Общее решение: ЗА"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/voting_information" />
+
+	<TextView
+		android:id="@+id/turnout_percentage"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		tools:text="Явка составила: 76%"
+		app:layout_constraintStart_toStartOf="@+id/date"
+		app:layout_constraintTop_toBottomOf="@+id/date" />
+
+	<TextView
+		android:id="@+id/check_sum_title"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="8dp"
+		android:text="Контрольная сумма голосования: "
+		app:layout_constraintStart_toStartOf="@+id/turnout_percentage"
+		app:layout_constraintTop_toBottomOf="@+id/turnout_percentage" />
+
+	<TextView
+		android:id="@+id/check_sum_data"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+
+		tools:text="weharahmilfxam"
+		app:layout_constraintStart_toStartOf="@+id/check_sum_title"
+		app:layout_constraintTop_toBottomOf="@+id/check_sum_title" />
+
+	<TextView
+		android:id="@+id/check_sum_description"
+		style="@style/TextAppearance.AppCompat.Caption"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:text="Вы можете сохранить данную контрольную сумму, чтобы быть увереным в неизменности решения"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="@+id/check_sum_data"
+		app:layout_constraintTop_toBottomOf="@+id/check_sum_data" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

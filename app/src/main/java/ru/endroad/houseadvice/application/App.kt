@@ -7,6 +7,7 @@ import ru.endroad.feature.authentication.di.moduleAuthentication
 import ru.endroad.feature.onboard.di.moduleOnBoarding
 import ru.endroad.feature.profile.moduleProfile
 import ru.endroad.feature.question.list.di.moduleQuestionList
+import ru.endroad.feature.report.di.moduleReport
 import ru.endroad.feature.voting.di.moduleVoting
 import ru.endroad.houseadvice.deeplink.moduleDeeplink
 import ru.endroad.houseadvice.navigation.di.moduleNavigation
@@ -24,6 +25,7 @@ class App : Application() {
 		moduleVoting,
 		moduleOnBoarding,
 		moduleQuestionList,
+		moduleReport,
 		moduleProfile
 	)
 
