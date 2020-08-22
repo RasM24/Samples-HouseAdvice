@@ -3,6 +3,7 @@ package ru.endroad.houseadvice.navigation.utils
 import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 
 //TODO данные методы уже имеются в библиотеке ru.endroad.camp:fragment-navigation:1.0.0
 
@@ -15,12 +16,14 @@ val Fragment.key get() = this::class.java.key
  * @param fragment экземпляр фрагмента
  * @param container id layout'а, в котором будет заменен фрагмент
  */
-fun FragmentManager.changeRoot(fragment: Fragment, @IdRes container: Int) {
+fun FragmentManager.changeRoot(fragment: Fragment, animation: FragmentAnimation, @IdRes container: Int) {
 	for (i in 0 until backStackEntryCount) popBackStack()
 
-	beginTransaction()
-		.replace(container, fragment)
-		.commitAllowingStateLoss()
+	beginTransaction().run {
+		setAnimationTransaction(animation)
+		replace(container, fragment)
+		commitAllowingStateLoss()
+	}
 }
 
 /**
@@ -29,16 +32,12 @@ fun FragmentManager.changeRoot(fragment: Fragment, @IdRes container: Int) {
  * @param fragment экземпляр фрагмента
  * @param container id layout'а, в котором будет заменен фрагмент
  */
-fun FragmentManager.replace(fragment: Fragment, @IdRes container: Int) {
-	if (backStackEntryCount == 0) {
-		beginTransaction()
-			.replace(container, fragment)
-			.commitAllowingStateLoss()
-	} else {
-		beginTransaction()
-			.replace(container, fragment)
-			.addToBackStack(fragment.key)
-			.commitAllowingStateLoss()
+fun FragmentManager.replace(fragment: Fragment, animation: FragmentAnimation, @IdRes container: Int) {
+	beginTransaction().run {
+		setAnimationTransaction(animation)
+		replace(container, fragment)
+		if (backStackEntryCount != 0) addToBackStack(fragment.key)
+		commitAllowingStateLoss()
 	}
 }
 
@@ -48,12 +47,18 @@ fun FragmentManager.replace(fragment: Fragment, @IdRes container: Int) {
  * @param fragment экземпляр фрагмента
  * @param container id layout'а, в котором будет заменен фрагмент
  */
-fun FragmentManager.forwardTo(fragment: Fragment, @IdRes container: Int) {
+fun FragmentManager.forwardTo(fragment: Fragment, animation: FragmentAnimation, @IdRes container: Int) {
 	findFragmentById(container)?.onHiddenChanged(true)
-	beginTransaction()
-		.replace(container, fragment)
-		.addToBackStack(fragment.key)
-		.commitAllowingStateLoss()
+	beginTransaction().run {
+		setAnimationTransaction(animation)
+		replace(container, fragment)
+		addToBackStack(fragment.key)
+		commitAllowingStateLoss()
+	}
+}
+
+private fun FragmentTransaction.setAnimationTransaction(animation: FragmentAnimation) {
+	animation.run { setCustomAnimations(enter, exit, popEnter, popExit) }
 }
 
 /**

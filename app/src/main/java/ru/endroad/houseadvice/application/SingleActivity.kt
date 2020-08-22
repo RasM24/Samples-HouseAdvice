@@ -11,6 +11,7 @@ import ru.endroad.houseadvice.deeplink.DeeplinkHandler
 import ru.endroad.houseadvice.navigation.navigator.MainNavigation
 import ru.endroad.houseadvice.navigation.navigator.NavigatorHolder
 import ru.endroad.houseadvice.navigation.utils.changeRoot
+import ru.endroad.houseadvice.navigation.utils.replaceAnimation
 
 class SingleActivity : AppCompatActivity() {
 
@@ -31,7 +32,7 @@ class SingleActivity : AppCompatActivity() {
 	}
 
 	private fun openHomeScreen() {
-		supportFragmentManager.changeRoot(HubFragment(), R.id.root)
+		supportFragmentManager.changeRoot(HubFragment(), replaceAnimation, R.id.root)
 		mainNavigation.openInitialScreen()
 	}
 

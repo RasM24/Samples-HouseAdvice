@@ -25,6 +25,8 @@ class HubFragment : Fragment() {
 		navigation.selectedItemId = initialTab
 
 		navigation.setOnNavigationItemSelectedListener { menu ->
+			if (navigation.selectedItemId == menu.itemId) return@setOnNavigationItemSelectedListener false
+
 			when (menu.itemId) {
 				R.id.tab_forum       -> router.openForum()
 				R.id.tab_information -> router.openInformation()

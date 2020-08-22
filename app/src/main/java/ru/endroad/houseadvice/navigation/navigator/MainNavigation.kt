@@ -12,9 +12,9 @@ class MainNavigation(
 
 	fun openInitialScreen() {
 		if (onBoardingAvailableDataSource.isOnBoardAvailable()) {
-			navigatorHolder.open(OnBoardingFragment())
+			navigatorHolder.changeRoot(OnBoardingFragment())
 		} else {
-			navigatorHolder.open(VotingFragment())
+			navigatorHolder.changeRoot(VotingFragment())
 		}
 	}
 }

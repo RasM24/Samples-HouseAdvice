@@ -13,14 +13,14 @@ class HubNavigationRouterImpl(private val navigatorHolder: NavigatorHolder) : Hu
 	override fun openVotes() = Unit
 
 	override fun openForum() {
-		navigatorHolder.open(ForumFragment())
+		navigatorHolder.changeRoot(ForumFragment())
 	}
 
 	override fun openInformation() {
-		navigatorHolder.open(BulletinBoardFragment())
+		navigatorHolder.changeRoot(BulletinBoardFragment())
 	}
 
 	override fun openSupport() {
-		navigatorHolder.open(SupportFragment())
+		navigatorHolder.changeRoot(SupportFragment())
 	}
 }
