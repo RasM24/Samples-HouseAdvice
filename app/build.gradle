@@ -9,6 +9,7 @@ dependencies {
 	implementation project(':feature-forum')
 	implementation project(':feature-support')
 	implementation project(':feature-question-list')
+	implementation project(':feature-profile')
 
 	implementation project(':shared-voting')
 
