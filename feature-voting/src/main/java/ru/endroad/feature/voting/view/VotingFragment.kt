@@ -8,9 +8,12 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.voting_layout.voting_abstained
+import kotlinx.android.synthetic.main.voting_layout.voting_discussion
 import kotlinx.android.synthetic.main.voting_layout.voting_information
 import kotlinx.android.synthetic.main.voting_layout.voting_no
+import kotlinx.android.synthetic.main.voting_layout.voting_screen
 import kotlinx.android.synthetic.main.voting_layout.voting_title
 import kotlinx.android.synthetic.main.voting_layout.voting_yes
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -42,6 +45,10 @@ class VotingFragment : Fragment() {
 		voting_yes.setOnClickListener { presenter.onYesClick() }
 		voting_no.setOnClickListener { presenter.onNoClick() }
 		voting_abstained.setOnClickListener { presenter.onAbstainedClick() }
+		voting_discussion.setOnClickListener {
+			//TODO добавить реальный переход на нужный экран
+			Snackbar.make(voting_screen, "Здесь должен был открыться форум", Snackbar.LENGTH_LONG).show()
+		}
 
 		presenter.screenState.observe(viewLifecycleOwner, Observer { render(it) })
 	}
