@@ -1,8 +1,9 @@
 package ru.endroad.houseadvice.deeplink
 
 import org.koin.dsl.module
-import org.koin.experimental.builder.single
+import ru.endroad.houseadvice.navigation.di.contentNavigatorQualifier
+import ru.endroad.houseadvice.navigation.di.rootNavigatorQualifier
 
 val moduleDeeplink = module {
-	single<DeeplinkHandler>()
+	single { DeeplinkHandler(get(rootNavigatorQualifier), get(contentNavigatorQualifier)) }
 }

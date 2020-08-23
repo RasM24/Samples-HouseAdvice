@@ -32,6 +32,7 @@ class SingleActivity : AppCompatActivity() {
 		rootNavigatorHolder.fragmentManager = supportFragmentManager
 		contentNavigatorHolder.fragmentManager = supportFragmentManager
 
+		//TODO здесь должна быть другая логика работы
 		savedInstanceState ?: openHomeScreen()
 		intent.let(::processIntent)
 	}
