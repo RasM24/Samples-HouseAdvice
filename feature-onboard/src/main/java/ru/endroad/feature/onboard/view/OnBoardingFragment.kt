@@ -18,6 +18,7 @@ class OnBoardingFragment : Fragment() {
 
 	override fun onActivityCreated(savedInstanceState: Bundle?) {
 		super.onActivityCreated(savedInstanceState)
+		requireActivity().title = "Совет Дома"
 
 		on_board.setClickOnSkipListener(presenter::onClickSkip)
 		on_board.onClickStartedListener(presenter::onClickGetStarted)

@@ -40,6 +40,7 @@ class QuestionReportFragment : Fragment() {
 
 	override fun onActivityCreated(savedInstanceState: Bundle?) {
 		super.onActivityCreated(savedInstanceState)
+		requireActivity().title = "Результаты"
 
 		presenter.screenState.observe(viewLifecycleOwner, Observer { render(it) })
 	}

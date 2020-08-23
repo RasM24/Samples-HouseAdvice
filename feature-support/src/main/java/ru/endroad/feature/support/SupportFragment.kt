@@ -15,6 +15,7 @@ class SupportFragment : Fragment() {
 
 	override fun onActivityCreated(savedInstanceState: Bundle?) {
 		super.onActivityCreated(savedInstanceState)
+		requireActivity().title = "Связь с ТСЖ/ЖКХ"
 
 		stub_text.text = "Когда-нибудь здесь что-то будет"
 	}

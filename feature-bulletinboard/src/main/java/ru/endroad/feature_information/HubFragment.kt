@@ -17,6 +17,7 @@ class BulletinBoardFragment : Fragment() {
 
 	override fun onActivityCreated(savedInstanceState: Bundle?) {
 		super.onActivityCreated(savedInstanceState)
+		requireActivity().title = "Доска объвлений"
 
 		//TODO hardcore дата, так как экран заглушка
 		first_announcement_title.text = "Внимание! Будет производится отключение воды с 21.05.2020 по 27.05.2020"
