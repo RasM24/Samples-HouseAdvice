@@ -24,12 +24,6 @@ class QuestionReportsDataSource {
 			Vote.YES,
 			88.4f,
 			"6U4Z58NcfSK4ZTEw"
-		),
-		Report(
-			11,
-			Vote.NO,
-			51.9f,
-			"ERALhbY9TjyF3fjC"
 		)
 	)
 
