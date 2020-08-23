@@ -5,9 +5,9 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.forum_topic_item.view.answer
 import kotlinx.android.synthetic.main.forum_topic_item.view.description
 import kotlinx.android.synthetic.main.forum_topic_item.view.name
-import ru.endroad.feature.forum.R
 import ru.endroad.feature.forum.data.ForumItem
 import ru.endroad.feature.forum.utils.inflate
+import ru.endroad.houseadvice.feature.forum.R
 
 internal class TopicViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(parent.inflate(R.layout.forum_topic_item)) {
 

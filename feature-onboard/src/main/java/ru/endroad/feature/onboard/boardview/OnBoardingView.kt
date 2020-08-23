@@ -6,15 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
 import androidx.viewpager2.widget.ViewPager2
-import ru.endroad.feature.onboard.boardview.OnBoardingPagerAdapter
-import ru.endroad.feature.onboard.boardview.OnBoardingPage
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 import kotlinx.android.synthetic.main.onboarding_view.view.nextBtn
 import kotlinx.android.synthetic.main.onboarding_view.view.onboardingRoot
 import kotlinx.android.synthetic.main.onboarding_view.view.skipBtn
 import kotlinx.android.synthetic.main.onboarding_view.view.slider
 import kotlinx.android.synthetic.main.onboarding_view.view.startBtn
-import ru.endroad.feature.onboard.R
+import ru.endroad.houseadvice.feature.onboard.R
 import setParallaxTransformation
 
 class OnBoardingView @JvmOverloads

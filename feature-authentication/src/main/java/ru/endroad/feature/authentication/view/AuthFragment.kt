@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.authentication_fragment.resend
 import kotlinx.android.synthetic.main.authentication_fragment.sign_phone
 import kotlinx.android.synthetic.main.authentication_fragment.text_agreement
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import ru.endroad.feature.authentication.R
+import ru.endroad.houseadvice.feature.authentication.R
 
 //TODO hardcode ресурсов
 class AuthFragment : Fragment() {

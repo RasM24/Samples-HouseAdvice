@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.onboarding_fragment.on_board
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import ru.endroad.feature.onboard.R
+import ru.endroad.houseadvice.feature.onboard.R
 
 class OnBoardingFragment : Fragment() {
 

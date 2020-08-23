@@ -11,7 +11,7 @@ import android.transition.Visibility
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewGroup
-import ru.endroad.feature.onboard.R
+import ru.endroad.houseadvice.feature.onboard.R
 
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
 class PopTransition(context: Context, attrs: AttributeSet) : Visibility(context, attrs) {

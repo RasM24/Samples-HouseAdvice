@@ -1,7 +1,6 @@
 dependencies {
 	implementation project(":feature-onboard")
-	implementation project(":feature-push")
-	implementation project(":feature-voting")
+	implementation project(':feature-question-voting')
 	implementation project(":feature-authentication")
 	implementation project(":feature-login")
 	implementation project(":feature-navigation")
@@ -9,8 +8,11 @@ dependencies {
 	implementation project(':feature-forum')
 	implementation project(':feature-support')
 	implementation project(':feature-question-list')
+	implementation project(':feature-question-report')
+	implementation project(':feature-profile')
 
 	implementation project(':shared-voting')
+	implementation project(":shared-profile")
 
 	implementation "androidx.appcompat:appcompat:$appcompat_version"
 	implementation "com.google.android.material:material:$material_version"

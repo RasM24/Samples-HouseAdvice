@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.hub_fragment.navigation
 import org.koin.android.ext.android.inject
+import ru.endroad.houseadvice.feature.navigation.R
 
 class HubFragment : Fragment() {
 

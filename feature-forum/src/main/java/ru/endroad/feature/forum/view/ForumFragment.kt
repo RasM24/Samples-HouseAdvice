@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.forum_fragment.recyclerView
-import ru.endroad.feature.forum.R
 import ru.endroad.feature.forum.data.ForumDataSource
+import ru.endroad.houseadvice.feature.forum.R
 
 class ForumFragment : Fragment() {
 

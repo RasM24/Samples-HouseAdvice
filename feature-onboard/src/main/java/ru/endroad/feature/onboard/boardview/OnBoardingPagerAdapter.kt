@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.onboarding_page_item.view.onboard_descript
 import kotlinx.android.synthetic.main.onboarding_page_item.view.onboard_image
 import kotlinx.android.synthetic.main.onboarding_page_item.view.onboard_subtitle
 import kotlinx.android.synthetic.main.onboarding_page_item.view.onboard_title
-import ru.endroad.feature.onboard.R
+import ru.endroad.houseadvice.feature.onboard.R
 
 class OnBoardingPagerAdapter(
 	private val onBoardingPageList: Array<OnBoardingPage> = OnBoardingPage.values()

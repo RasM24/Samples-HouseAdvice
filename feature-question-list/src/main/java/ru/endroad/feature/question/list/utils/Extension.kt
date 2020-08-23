@@ -17,12 +17,12 @@ internal fun ViewGroup.inflate(@LayoutRes layoutRes: Int, attachToRoot: Boolean 
 internal fun formatDate(unix: Long): String {
 	val format = SimpleDateFormat("dd MMM, E")
 
-	val date = Date(unix)
+	val date = Date(unix * MILLIS_IN_SECOND)
 	return format.format(date)
 }
 
 internal fun getLeftCountDaysTo(endDate: Long): Int {
 	val startDate = Date().time / MILLIS_IN_SECOND
 
-	return ((endDate - startDate) / 86400).toInt()
+	return ((endDate - startDate) / SECOND_IN_DAY).toInt()
 }
