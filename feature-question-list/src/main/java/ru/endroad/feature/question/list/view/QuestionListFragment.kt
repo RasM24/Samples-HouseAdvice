@@ -20,6 +20,7 @@ class QuestionListFragment : Fragment() {
 
 	override fun onActivityCreated(savedInstanceState: Bundle?) {
 		super.onActivityCreated(savedInstanceState)
+		requireActivity().title = "Голосования"
 
 		val itemListAdapter = QuestionListAdapter(
 			presenter::onCLickSoonQuestion,

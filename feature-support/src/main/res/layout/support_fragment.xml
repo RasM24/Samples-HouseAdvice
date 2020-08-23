@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="match_parent"
-	android:layout_height="match_parent">
+	android:layout_height="match_parent"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical"
+	android:padding = "16dp">
 
 	<TextView
-		android:id="@+id/stub_text"
+		android:id="@+id/tszh_phone"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_gravity="center" />
+		android:autoLink="phone"
+		android:padding = "8dp"
+		tools:text = "ТСЖ: 8-800-555-3535"/>
 
-</FrameLayout>
+	<TextView
+		android:id="@+id/zhkh_phone"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:autoLink="phone"
+		android:padding = "8dp"
+		tools:text = "ЖКХ: 8-800-555-3535" />
+
+</LinearLayout>

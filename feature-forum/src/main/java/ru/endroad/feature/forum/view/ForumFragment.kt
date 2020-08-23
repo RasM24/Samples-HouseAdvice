@@ -21,6 +21,7 @@ class ForumFragment : Fragment() {
 
 	override fun onActivityCreated(savedInstanceState: Bundle?) {
 		super.onActivityCreated(savedInstanceState)
+		requireActivity().title = "Форум"
 
 		recyclerView.adapter = itemListAdapter
 

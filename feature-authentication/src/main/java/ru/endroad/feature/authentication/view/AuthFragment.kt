@@ -26,6 +26,7 @@ class AuthFragment : Fragment() {
 
 	override fun onActivityCreated(savedInstanceState: Bundle?) {
 		super.onActivityCreated(savedInstanceState)
+		requireActivity().title = "Вход"
 
 		presenter.state.observe(viewLifecycleOwner, Observer { render(it) })
 

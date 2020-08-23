@@ -41,8 +41,9 @@ class VotingFragment : Fragment() {
 
 	override fun onActivityCreated(savedInstanceState: Bundle?) {
 		super.onActivityCreated(savedInstanceState)
+		requireActivity().title = "Голосование"
 
-		voting_yes.setOnClickListener { presenter.onYesClick() }
+			voting_yes.setOnClickListener { presenter.onYesClick() }
 		voting_no.setOnClickListener { presenter.onNoClick() }
 		voting_abstained.setOnClickListener { presenter.onAbstainedClick() }
 		voting_discussion.setOnClickListener {

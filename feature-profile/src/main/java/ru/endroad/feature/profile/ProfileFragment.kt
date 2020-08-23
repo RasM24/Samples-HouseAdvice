@@ -24,6 +24,7 @@ class ProfileFragment : Fragment() {
 
 	override fun onActivityCreated(savedInstanceState: Bundle?) {
 		super.onActivityCreated(savedInstanceState)
+		requireActivity().title = "Профиль"
 
 		presenter.profileData.observe(viewLifecycleOwner, Observer { renderProfile(it) })
 	}
