@@ -1,5 +1,22 @@
 dependencies {
-	implementation 'androidx.appcompat:appcompat:1.2.0'
-	implementation 'com.google.android.material:material:1.2.0'
-	implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+	implementation project(":feature-onboard")
+	implementation project(":feature-push")
+	implementation project(":feature-voting")
+	implementation project(":feature-authentication")
+	implementation project(":feature-login")
+	implementation project(":feature-navigation")
+	implementation project(':feature-bulletinboard')
+	implementation project(':feature-forum')
+	implementation project(':feature-support')
+	implementation project(':feature-question-list')
+
+	implementation project(':shared-voting')
+
+	implementation "androidx.appcompat:appcompat:$appcompat_version"
+	implementation "com.google.android.material:material:$material_version"
+	implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+
+	implementation "org.koin:koin-core:$koin_version"
+	implementation "org.koin:koin-core-ext:$koin_version"
+	implementation "org.koin:koin-androidx-viewmodel:$koin_version"
 }

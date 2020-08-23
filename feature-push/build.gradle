@@ -1,0 +1,6 @@
+apply plugin: 'com.google.gms.google-services'
+dependencies {
+	api 'com.google.firebase:firebase-messaging:20.1.4'
+	implementation "org.koin:koin-core:$koin_version"
+	implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+}

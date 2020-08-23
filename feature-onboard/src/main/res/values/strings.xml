@@ -1,0 +1,17 @@
+<resources>
+    <string name="onboarding_slide1_title">Добро пожаловать!</string>
+    <string name="onboarding_slide1_subtitle">Приложение \"Голос Дома\" - простой путь к улучшению жилищных условий</string>
+    <string name="onboarding_slide1_desc">Учавствуйте в собрании жильцов и принятии решений не выходя из дома</string>
+
+    <string name="onboarding_slide2_title">Создай свой личный профиль</string>
+    <string name="onboarding_slide2_subtitle">Нужно явиться на собрание жильцов, а нет времени?</string>
+    <string name="onboarding_slide2_desc">Не пропустите ни одно важное решение с помощью вашего телефона</string>
+
+    <string name="onboarding_slide3_title">Стань полноценным жильцом своего дома</string>
+    <string name="onboarding_slide3_subtitle">Создай уют и за пределами своей квартиры</string>
+    <string name="onboarding_slide3_desc">Активная гражданская позиция в один клик</string>
+
+    <string name="next">Продолжить</string>
+    <string name="skip">Пропустить</string>
+    <string name="get_started">Начать</string>
+</resources>
